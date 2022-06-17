@@ -113,8 +113,9 @@ public class Deck implements Iterable<Card> {
      * TODO Complete Javadoc comment.
      *
      * @return
+     * @throws NoCardsRemainingException
      */
-    public Card draw() {
+    public Card draw() throws NoCardsRemainingException{
         try {
             Card card = iterator.next();
             remaining--;
@@ -130,6 +131,15 @@ public class Deck implements Iterable<Card> {
     public void reset() {
         iterator = cards.iterator();
         remaining = size;
+    }
+
+    /**
+     * TODO Complete Javadoc comment.
+     *
+     * @return
+     */
+    public int getRemaining() {
+        return remaining;
     }
 
 }
